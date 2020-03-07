@@ -65,7 +65,7 @@ export const setCheckRunOutput = async (text: string): Promise<void> => {
           end_line: 1,
           annotation_level: 'notice',
           message: text,
-          title: core.getInput('title') + ' complete',
+          title: core.getInput('title') + ' complete!',
         },
       ],
     },
