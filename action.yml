@@ -4,11 +4,19 @@ author: "@github"
 inputs:
   token:
     description: >
-      GitHub token used to check repository content and provide feedback. By default, 
+      GitHub token used to check repository content and provide feedback. By default,
       this uses the repository token provided by GitHub Actions. You can customize this
-      by replacing this token with a user token which has write-access to your repository. 
+      by replacing this token with a user token which has write-access to your repository.
       Note that the token will be accessible to all repository collaborators.
     default: ${{ github.token }}
+  testSuite:
+    description: >
+      json file containing the tests to run
+    default: ".github/classroom/autograding.json"
+  title:
+    description: >
+      Autograding title
+    default: "Autograding"
 runs:
   using: "node12"
   main: "./dist/index.js"

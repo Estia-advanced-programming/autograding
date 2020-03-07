@@ -10,7 +10,7 @@ const run = async (): Promise<void> => {
       throw new Error('No GITHUB_WORKSPACE')
     }
 
-    const data = fs.readFileSync(path.resolve(cwd, '.github/classroom/autograding.json'))
+    const data = fs.readFileSync(path.resolve(cwd, core.getInput('testSuite')))
     const json = JSON.parse(data.toString())
 
     await runAll(json.tests as Array<Test>, cwd)
